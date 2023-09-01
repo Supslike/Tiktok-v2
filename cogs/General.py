@@ -93,7 +93,7 @@ class general(commands.Cog):
     if not ctx.message.reference and message_id != None:
       if str(message_id) in data:
         link_data = data[str(message_id)]
-        await ctx.author.send(f"# Source: \n\n - Tiktok link:  <{link_data['url']}>\n - From:  {link_data['author']}\n- Channel:  {link_data['channel']}\n- Message:  <#{link_data['message_url']}>\n- Download Link:  <||{link_data['video_url']}||>")
+        await ctx.author.send(f"# Source: \n\n - Tiktok link:  <{link_data['url']}>\n - From:  {link_data['author']}\n- Channel:  <#{link_data['channel']}>\n- Message:  {link_data['message_url']}\n- Download Link:  || <{link_data['video_url']}> ||")
       else:
         await ctx.author.send(f"# Source: \n\n ``{message_id}``  NOT FOUND!")
     if not ctx.message.reference and message_id == None:
