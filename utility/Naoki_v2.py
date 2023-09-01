@@ -193,7 +193,7 @@ class NaokiV2():
       pass
 
     # Logs video data
-    db["source"][str(msg.id)] = {"url": message.url, "video_url": msg.attachments[0].url, "author": str(message.author.display_name), "channel": str(message.channel), "message_url": str(msg.jump_url)}
+    db["source"][str(msg.id)] = {"url": message.url, "video_url": msg.attachments[0].url, "author": str(message.author.display_name), "channel": str(message.channel.id), "message_url": str(msg.jump_url)}
     db["saved"][str(message.url)] = msg.attachments[0].url
 
   # Add emoji
