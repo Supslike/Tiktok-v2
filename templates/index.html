@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bot Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #000;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    .profile {
+        margin: 20px;
+    }
+    .circle {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #222;
+        margin-right: 20px;
+    }
+    .circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .status {
+        color: {% if bot_online %}green{% else %}red{% endif %};
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 600px) {
+        .circle {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .header-box {
+        background-color: #222;
+        border-top: 5px solid #ccc;
+        padding: 10px;
+    }
+
+    .profile {
+        display: flex;
+        align-items: center;
+    }
+
+    .circle {
+        margin-right: 20px;
+    }
+    @media (max-width: 600px) and (orientation: portrait) {
+    .circle {
+        width: 100px;
+        height: 100px;
+    }
+}
+    @media (max-width: 600px) and (orientation: landscape) {
+      .circle {
+        width: 150px;
+        height: 150px;
+    }
+}
+    
+  </style>
+</head>
+<body>
+  <div class="header-box"></div>
+    <div class="profile">
+        <div class="circle">
+            <img src="{{ url_for('static', filename='bot_profile.jpg') }}" alt="Bot Profile">
+        </div>
+        <div class="details">
+            <h2>{{ bot_name }}</h2>
+            <p>{{ bot_description }}</p>
+            <p class="status">{% if bot_online %}Online{% else %}Offline{% endif %}</p>
+        </div>
+    </div>
+</body>
+</html>
