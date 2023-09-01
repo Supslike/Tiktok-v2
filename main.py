@@ -35,7 +35,7 @@ async def on_ready():
       if filename.endswith(".py"):
         await bot.load_extension(f"cogs.{filename[:-3]}")
         print(f"[+] Loaded cog {filename}!")
-        cogs = [filename[:-3]]
+        cogs += [filename[:-3]]
     except Exception as e:
       print(f"[-] SOMETHING WENT WRONG WITH TRYING TO LOAD {filename}\n\n{e}\n\n")
   COGS = cogs
