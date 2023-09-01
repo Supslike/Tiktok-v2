@@ -24,7 +24,7 @@ Get your API key at https://rapidapi.com/hub
 
 #### is this for replit only?
 
-Yes.
+Yes. Although you can rewrite the ``db`` part, and replace it with your own database. That's the only replit part, it should work in your local once you removed replit database parts.
 
 
 
