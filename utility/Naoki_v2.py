@@ -1,11 +1,9 @@
 # MAIN IMPORTS
 import os
-import pytz
 import time
 import json
 import asyncio
 import discord
-import datetime
 import traceback
 from replit import db
 from utility import System_Functions
@@ -213,24 +211,6 @@ class NaokiV2():
       return True
     except:
       return False
-
-  # Embed for the help command
-  async def embed(self, msg):
-    # Creating the embed message
-    embed = discord.Embed(title="Command List", description="PREFIX: ``t!``")
-    embed.add_field(name="Command: help", value=">  Shows this message", inline=False)
-    embed.add_field(name="Command: Download <link>", value=">  Downloads DailyMotion, Facebook, and Instagram videos", inline=False)
-    embed.add_field(name="Command: Tiktok <link>", value=">  Download specifically for tiktok videos only | slideshows are not supported", inline=False)
-    embed.add_field(name="Command: ping", value=">  Checks if the bot is responding", inline=False)
-    embed.add_field(name="Command: set <setting>", value=">  Activate/Deactivate an option", inline=False)
-    embed.add_field(name="Command: settings", value=">  Shows your settings", inline=False)
-    embed.set_author(name=msg.author.display_name, icon_url=msg.author.display_avatar)
-    embed.set_thumbnail(url=msg.guild.icon)
-    gmt = pytz.timezone('Asia/Macau')
-    gmt = datetime.datetime.now(gmt)
-    philtime = gmt.strftime("%a, %d %b %Y %I:%M:%S %p GMT+8")
-    embed.set_footer(text=f"{philtime}")
-    return embed
 
   # Download Report for API monitoring
   def _print_console(self, msg, usage_type: str):
